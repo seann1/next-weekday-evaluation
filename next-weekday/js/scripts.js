@@ -22,11 +22,13 @@ weekday = function(day) {
     }
 
     var numberOfDays = (dayNumber - currentDay);
-  if (numberOfDays < 0) {
-    numberOfDays = currentDay + dayNumber - 1
-  }
+      if (numberOfDays < 0) {
+        numberOfDays = currentDay + dayNumber - 1
+      }
 
-  var newDate = (numberOfDays * 86400000) + todayParse;
+      var newDate = (numberOfDays * 86400000) + todayParse;
+      newDate = new Date(newDate);
+      newDate = [dayInput, newDate.getMonth() + 1, newDate.getDate(), newDate.getYear() + 1900]
 
   return newDate
 };
