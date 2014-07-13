@@ -19,7 +19,7 @@ weekday = function(day) {
       dayNumber = 5
     } else if (dayInput === "saturday") {
       dayNumber = 6
-    }
+    } 
 
     var numberOfDays = (dayNumber - currentDay);
       if (numberOfDays < 0) {
@@ -27,10 +27,14 @@ weekday = function(day) {
       }
 
       var newDate = (numberOfDays * 86400000) + todayParse;
+      if (isNaN(newDate) === true) {
+        return alert("Please enter a day of the week");
+      } else {
       newDate = new Date(newDate);
       newDate = [dayInput, newDate.getMonth() + 1, newDate.getDate(), newDate.getYear() + 1900]
 
   return newDate
+  };
 };
 
 $(document).ready(function(){
