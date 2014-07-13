@@ -8,6 +8,9 @@ describe("weekday", function() {
   it ("returns the date of the next occurance of the day specified as an array. First element is a string of the day, second element is the month, third element is the day,fourth element is the year", function () {
   		weekday("tuesday").should.eql(["tuesday", 7, 15, 2014]);
   	});
+  it ("adds 7 days to the current day if the current day is entered", function () {
+  	weekday("sunday").should.eql(["sunday", 7, 20, 2014]);
+  });
 });
 
 
