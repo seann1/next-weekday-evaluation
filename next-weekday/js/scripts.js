@@ -33,5 +33,20 @@ weekday = function(day) {
   return newDate
 };
 
+$(document).ready(function(){
+  $("form#next-weekday").submit(function(event){
+    event.preventDefault();
+    var userInput = $("input#next-weekday").val();
+    //var result = (weekday(userInput)[1]) (weekday(userInput)[2])  (weekday(userInput)[3]);
+    $("span#output").text(result);
+    $("span#inputDay").text(weekday(userInput)[0]);
+    $("span#month").text(weekday(userInput)[1] + "/");
+    $("span#day").text(weekday(userInput)[2] + "/");
+    $("span#year").text(weekday(userInput)[3]);
+    $("#result").fadeIn();
+    event.preventDefault();
+
+  });
+});
 
 
