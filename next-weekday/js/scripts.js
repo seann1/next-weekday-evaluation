@@ -21,6 +21,10 @@ weekday = function(day) {
       dayNumber = 6
     } 
 
+    if (dayNumber === currentDay) {
+      dayNumber = dayNumber + 7
+    }
+
     var numberOfDays = (dayNumber - currentDay);
       if (numberOfDays < 0) {
         numberOfDays = currentDay + dayNumber - 1
