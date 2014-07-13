@@ -3,6 +3,7 @@ weekday = function(day) {
    var dayInput = day.toLowerCase();
    var today = new Date();
    var currentDay = today.getDay();
+   var todayParse = Date.parse(today);
 
    if (dayInput === "sunday") {
       var dayNumber = 0
@@ -25,7 +26,9 @@ weekday = function(day) {
     numberOfDays = currentDay + dayNumber - 1
   }
 
-  return numberOfDays
+  var newDate = (numberOfDays * 86400000) + todayParse;
+
+  return newDate
 };
 
 
